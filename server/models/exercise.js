@@ -1,4 +1,4 @@
-import mongoose from "mongoose"; 
+const mongoose=require('mongoose');
 const exerciseschema=mongoose.Schema({
     username:{
         type:String,
@@ -7,7 +7,7 @@ const exerciseschema=mongoose.Schema({
     },
     description:{
         type:String,
-        required:true
+
     },
     duration:{
         type:Number
