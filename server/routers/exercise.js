@@ -46,9 +46,9 @@ exercise.post("/exercises/add", async (req, res) => {
   }
 });
 
-exercise.put("/exercises/update/:id", async (req, res) => {
+exercise.put("/exercises/update/:username", async (req, res) => {
   try {
-    const exercise = await Exercise.findById(req.params.id);
+    const exercise = await Exercise.findOne({username:req.params.username});
     if (!exercise) {
       return res.status(404).send("Exercise not found");
     }
