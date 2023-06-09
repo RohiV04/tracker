@@ -8,6 +8,9 @@ const con =mongoose.connection;
 con.once('open',()=>console.log("connected"));
 
 app.use(express.json());
+app.get('/',(req,res)=>{
+    res.send("Hello World!!!");
+})
 const userschema=require('./routers/user');
 const exerciseschema=require('./routers/exercise');
 app.use('/',userschema);

@@ -11,6 +11,7 @@ user.get("/users", async (req, res) => {
   }
 });
 
+
 user.post("/users/add", async (req, res) => {
   const user = new User({
     username: req.body.username,
