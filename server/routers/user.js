@@ -15,6 +15,7 @@ user.get("/users", async (req, res) => {
 user.post("/users/add", async (req, res) => {
   const user = new User({
     username: req.body.username,
+    password: req.body.password,
   });
   try {
     const u1 = await user.save();
