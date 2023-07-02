@@ -12,9 +12,9 @@ exercise.get("/exercises", async (req, res) => {
   }
 });
 
-exercise.get("/exercises/:id", async (req, res) => {
+exercise.get("/exercises/:username", async (req, res) => {
   try {
-    const exercise = await Exercise.findById(req.params.id);
+    const exercise = await Exercise.findOne({username:req.params.username});
     res.json(exercise);
   } catch (error) {
     console.log(error);
